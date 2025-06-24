@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Subdomain Tab Opener",
+  "version": "1.0",
+  "description": "Opens each subdomain of a given domain in a new tab.",
+  "permissions": ["tabs"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
