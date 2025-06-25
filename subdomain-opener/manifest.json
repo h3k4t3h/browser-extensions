@@ -1,13 +1,20 @@
 {
   "manifest_version": 3,
-  "name": "Subdomain Tab Opener",
-  "version": "1.1",
-  "description": "Opens each subdomain of a given domain in a new tab, or via right-click.",
-  "permissions": ["tabs", "contextMenus"],
+  "name": "Shodan Subdomain Opener",
+  "version": "1.0",
+  "description": "Right-click to search domain on Shodan and open subdomains in tabs.",
+  "permissions": ["tabs", "scripting", "contextMenus", "activeTab"],
   "background": {
     "service_worker": "background.js"
   },
   "action": {
     "default_popup": "popup.html"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.shodan.io/domain/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["https://www.shodan.io/*"]
 }
