@@ -9,8 +9,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       .map(li => li.textContent.trim())
       .filter(t => t && t !== "*");
 
-    // Include robots.txt as an extra endpoint
-    subdomains.push("robots.txt");
 
     sendResponse({
       domain: domainTitle,
